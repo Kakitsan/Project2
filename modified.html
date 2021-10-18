@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+	</head>
+		<link rel="stylesheet" href="style.css">
+     <script type="text/javascript" src="paper-full.js"></script>
+		 <script type="text/javascript" src="p5.js"></script>
+     <script type="text/paperscript" canvas="canvas1">
+
+
+         tool.fixedDistance = 10;
+
+         var values = { size: tool.fixedDistance };
+
+
+
+         var point, path;
+
+         function getPos(pt) {
+             return (pt / values.size).round() * values.size;
+         }
+
+         function onMouseDown(event) {
+             point = getPos(event.point);
+             path = new Path();
+						 x = Math.random(0, 255);
+						 y = Math.random(0, 255);
+						 z = Math.random(0.1, 0.5);
+             path.strokeColor = new Color(x, y, z);
+             path.add(point);
+         }
+
+         function onMouseDrag(event) {
+             var p = getPos(event.point);
+             if (point != p) {
+                 path.add(p);
+                 point = p;
+             }
+         }
+		 </script>
+		 <script>
+		 let noiseoffset = 0.0;
+let strokeWidth = 5;
+
+function setup() {
+ createCanvas(1000, 1000);
+
+ background(220, 50, 133);
+
+
+
+}
+
+function draw() {
+
+	 strokeWeight(strokeWidth);
+	 background(220, 50, 133, 5);
+
+	 noiseoffset += 0.05;
+	 strokeWidth = noise(noiseoffset) * 20;
+
+	 stroke(map(mouseX, mouseY, 600, 255, true));
+	 line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+	 line(mouseX, mouseY, pmouseX, pmouseY);
+
+}
+
+		 </script>
+	<body>
+			 <canvas id="canvas1" resize></canvas>
+	</body>
+</html>

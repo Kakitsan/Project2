@@ -1,0 +1,65 @@
+html,
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Scale canvas with resize attribute to full size */
+#canvas1 {
+  margin:auto;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 1000px;
+    position: absolute;
+
+}
+
+canvas {
+  margin:auto;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#top{
+  position: relative;
+  left:20%;
+  width: 60%;
+  background: #c3ebe1;
+
+}
+
+#mid{
+
+  background: #ebeac3;
+  position: relative;
+  left:20%;
+  width: 60%;
+}
+
+#botttom{
+
+  background: #edd0f2;
+  position: relative;
+  left:20%;
+  width: 60%;
+}
+
+h1{
+  text-align: center;
+
+}
+
+p{
+  text-align: center;
+
+}
+
+a{
+  position: relative;
+  left: 45%;
+}
